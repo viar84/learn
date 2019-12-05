@@ -1,0 +1,502 @@
+
+<div class="jumbotron" style="background-color: #fff; height: calc(95vh);">
+    <h1>Angular Bootstrap Demo</h1>
+    <p>appointment-create works!</p>
+
+    <div class="container main-background">
+
+        <!-- START MAIN CONTENT -->
+
+        <!-- START OS FORM TITLE -->
+        <div class="row" id="generalTitle">
+            <div class="col-sm-6 page-title">
+                <h3>Appointment Request</h3>
+            </div>
+            <div class="col-sm-6 clr-pad-lt-md">
+                <div class="pushdown26 hidden-xs"></div>
+                <div class="pushdown15 visible-xs"></div>
+                <div id="searchFields">
+                    <form id="locSearchForm" name="locationSearchForm"
+                        class="simple-form col-sm-8 col-5-gutter"
+                        action="os_results.html" method="post" novalidate="novalidate">
+                        <div id="searchCrit" class=" clr-pad-rt-sm form-group required">
+                            <a href="#">DOCTORS</a> <a href="#">HOSPITALS</a> <a href="#">SPECIALITY</a>
+                            <div class="input-group input-group-sm">
+                                <input type="text" placeholder="Doctor Name..."
+                                    name="selectDoctors" id="selectDoctors"
+                                    class="form-control input-sm field-stretch"> <input
+                                    type="text" placeholder="Hospital Name..."
+                                    name="selectHospitals" id="selectHospitals"
+                                    class="form-control input-sm field-stretch hide"> <input
+                                    type="text" class="form-control input-sm field-stretch hide"
+                                    id="selectSpeciality" name="selectSpeciality"
+                                    placeholder="Speciality Name..."> <span
+                                    class="input-group-btn">
+                                    <button class="btn btn-sm btn-primary" type="button">
+                                        <i class="glyphicon glyphicon-search"></i>&nbsp;Search
+                                    </button>
+                                </span>
+                            </div>
+                            <div></div>
+                        </div>
+
+                        <div class="clearfix visible-xs"></div>
+                    </form>
+                </div>
+                <label class="pull-right"><a href="#settings"
+                    data-backdrop="static" data-toggle="modal">Settings</a></label>
+                <button id="makeNewSearch" type="button"
+                    class="btn btn-default btn-xs pull-right">
+                    <i class="glyphicon glyphicon-chevron-left icon-link-pad"></i>New
+                    Search
+                </button>
+            </div>
+        </div>
+        <!-- END OS FORM TITLE -->
+
+
+        <!-- START MAIN CONTENT -->
+        <div id="main-content" class="row pushdown5">
+
+            <!-- START MAIN CONTAINER INNER -->
+            <div class="container-inner col-xs-12">
+                <div class="submission-progress row ">
+                    <div class="col-sm-12">
+                        <ul class="nav nav-pills">
+                            <li class="active"><span
+                                class="label label-primary label-norm">1</span>Enter Request</li>
+                            <li class="disabled"><span
+                                class="label label-default label-norm">2</span>Select
+                                Appointment</li>
+                            <li class="disabled"><span
+                                class="label label-default label-norm">3</span>View Details</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" id="container-title">
+                    <div class="col-xs-12">
+                        <h4>Select Your Medical Practice</h4>
+                        <small>Please select the medical practice for that
+                            appointment.</small>
+
+                    </div>
+                </div>
+                <div id="practiceBlock" class="row">
+                    <div class="col-xs-12">
+                        <div class="well clr-pad-bot clearfix">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group required">
+                                        <label for="practice"><i
+                                            class="glyphicon glyphicon-asterisk"></i>Practice</label> <select
+                                            id="practice" name="practice"
+                                            class="form-control input-sm " required>
+                                            <option value="" selected="selected">Select</option>
+                                            <!-- <option value="e49f479d-7d2b-4ede-8e5a-0b1175295c2a">Cincinnati
+                                                Eye Institute</option> -->
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="carrierDet-title">
+                    <div class="col-sm-6">
+                        <h4>Select Provider and Location</h4>
+                    </div>
+
+                    <div class="col-sm-6 text-right required">
+                        <label class="help_text_rtbt hidden-xs"></label> <label
+                            class="section-help"><small>Please select your
+                                provider, the appropriate appointment category and desired
+                                location </small></label>
+                    </div>
+                </div>
+                <div class="row" id="selectProviderBlock">
+                    <div class="col-xs-12">
+                        <div class="well clr-pad-bot clearfix">
+                            <div class="row  row-5-gutter">
+                                <div class="col-sm-4 col-5-gutter">
+                                    <div class="form-group required">
+                                        <label for="providerSel"><i
+                                            class="glyphicon glyphicon-asterisk"></i>Select
+                                            provider/group</label> <select class="form-control input-sm"
+                                            name="providerSel" id="providerSel" required>
+                                            <option selected="selected" value="">Please select
+                                                a provider.</option>
+                                            <!-- <option value="c2a5aec2-ec12-446a-badf-1ce05e8d2ce9">Arar,
+                                                Hisham</option>
+                                            <option value="c1b865f8-448c-4be3-91c1-486592b6da0e">Arnow,
+                                                Steven</option>
+                                            <option value="e2e3ad1c-c9f0-4de2-897f-8e610d6762e5">Bell,
+                                                Howard</option>
+                                            <option value="0266079a-158e-4dba-ae50-b3462654b187">Bell,
+                                                Jason</option>
+                                            <option value="af3b8f11-b139-48cf-b326-4328112d95ca">Burch,
+                                                Thomas</option>
+                                            <option value="3d6c809c-8dc1-4f56-8b6e-d9a5ca1eef45">Burch,
+                                                Thomas</option>
+                                            <option value="5bbfc7d3-0bd3-4d76-aab5-0b61a8b808ae">Cohen,
+                                                John</option>
+                                            <option value="3ff23dab-663f-4fd5-8f01-679a9677ee02">Davis,
+                                                William</option>
+                                            <option value="19e057c3-4af5-4dda-8ed4-c85cef859f07">Faulkner,
+                                                William</option>
+                                            <option value="f3115ffb-aae3-428d-9190-9c10f209e6f5">Foster,
+                                                Robert</option>
+                                            <option value="6db8b6ee-b332-4369-a243-9985f485180e">Genereux,
+                                                Brad</option>
+                                            <option value="46beca6e-279b-44f9-ace9-d10584aedd38">Golnik,
+                                                Karl</option>
+                                            <option value="951d2ddb-a655-4abb-a217-21574a4a5c08">Goulet
+                                                III, Robert</option>
+                                            <option value="6c60936f-3fcc-4cb7-a8f7-5ff9ec9ffa5a">Greff,
+                                                Linda</option>
+                                            <option value="db65c3b0-a1bf-454c-9139-99d3b08bb130">Hamilton,
+                                                Jenny</option>
+                                            <option value="1d7795eb-3ebc-4acf-b845-6131f271f8c8">Hater,
+                                                Michael</option>
+                                            <option value="f9ee197c-b707-4cda-848d-07b01dbf667b">Henson
+                                                Rattan, Ginger</option>
+                                            <option value="c41d949b-4fe2-451b-9d1e-d30fb5a7c67e">Hildenbrand,
+                                                Jessica</option>
+                                            <option value="b1e1cf2b-8c7c-4fc1-acc4-a0195b38064c">Hinel,
+                                                Erich</option>
+                                            <option value="9f791221-a0d9-43d5-90e0-1d1df072278e">Holland,
+                                                Edward</option>
+                                            <option value="47fdf802-766c-4284-b43a-d846933aa29e">Houde,
+                                                Barbara</option>
+                                            <option value="3f9388cf-0fa8-45fc-9716-7c626669ecb6">Hutchins,
+                                                Robert</option>
+                                            <option value="ea4d9d18-8657-4a42-8c31-658d25849685">Jacobs,
+                                                Donald</option>
+                                            <option value="adc52216-9f25-4206-a78a-89b003bcbe1e">Kaufman,
+                                                Adam</option>
+                                            <option value="8597049c-e219-4b72-a329-85d986946e57">Khatana,
+                                                Anup</option>
+                                            <option value="32b9eae7-3ba3-4193-9e51-1071008c5ef8">Kode,
+                                                Ramesh</option>
+                                            <option value="ac68fdd0-ac5f-4588-9a1a-def76c0490e1">Kulwin,
+                                                Dwight</option>
+                                            <option value="4681e1cf-e36e-4cd2-aef2-7ecbd0f0087c">Mecoli,
+                                                Gregory</option>
+                                            <option value="04a3d99b-8fd1-4143-82ef-1b4c595502c5">Miller,
+                                                Daniel</option>
+                                            <option value="d5c567e1-e305-465e-9e0d-446c9a6b138b">Nerad,
+                                                Jeffrey</option>
+                                            <option value="066ef18d-85a7-44c0-bfcd-25ccfa9fb6c8">Nordlund,
+                                                Michael</option>
+                                            <option value="379815f1-316b-430a-9338-e7fe96016a9d">Osher,
+                                                James</option>
+                                            <option value="b85e62a1-bdd0-4618-829a-cab39739b05b">Petersen,
+                                                Michael</option>
+                                            <option value="1c9a07ff-51ae-4323-bb4e-e2dd1d8f4da4">Riemann,
+                                                Christopher</option>
+                                            <option value="e388b0a9-691d-41ab-b20c-269852e1217a">Robbins
+                                                Jr., Andrew</option>
+                                            <option value="5fd97a72-fbdd-41ab-9e61-62993b75045e">Roebuck,
+                                                Richard</option>
+                                            <option value="dca39d3b-5c28-4d41-a8de-88475fb66934">Sands,
+                                                Joshua</option>
+                                            <option value="780fc4ff-6eed-4c4a-8375-c63474ab68cd">Shull,
+                                                Emily</option>
+                                            <option value="03b46af2-5e49-4bd0-a09a-c985a38168a3">Sisk,
+                                                Robert</option>
+                                            <option value="ce382510-6ab7-4c6a-a097-b8af37e9fc12">Smith,
+                                                Corwin</option>
+                                            <option value="d0f2f305-6f8e-48cf-928c-6a61ea7d6477">Snyder,
+                                                Michael</option>
+                                            <option value="36588082-9b79-4fbb-baf0-2dead8f14470">Straus,
+                                                Tom</option>
+                                            <option value="a9f8e179-d1cd-4748-aecf-6dd55a7cd855">Strawn,
+                                                Robert</option>
+                                            <option value="0fb39a4e-09e9-4c63-95ae-b98e3298cbc0">Varley,
+                                                Gary</option>
+                                            <option value="7ef55716-a4ca-4462-8ffa-2d56bafd80a9">Yackey,
+                                                Mary Beth</option>
+                                            <option value="36f0954d-8bee-4b8b-8706-abd9556c5619">Zalta,
+                                                Alan</option>
+                                            <option value="4d4cc967-9c0f-4a2e-bb88-332cb5073721">Zink,
+                                                Jeffrey</option> -->
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-5-gutter">
+                                    <div class="form-group required">
+                                        <label for="categorySel"><i
+                                            class="glyphicon glyphicon-asterisk"></i>Select category</label> <select
+                                            id="categorySel" name="categorySel"
+                                            class="form-control input-sm" required>
+                                            <option value="" selected="selected">Please select
+                                                a category.</option>
+                                            <!-- <option value="test">TEST</option> -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-5-gutter">
+                                    <div class="form-group required">
+                                        <label for="locationSel"><i
+                                            class="glyphicon glyphicon-asterisk"></i>Select location</label> <select
+                                            id="locationSel" name="locationSel"
+                                            class="form-control input-sm" required>
+
+                                            <option value="" selected="selected">Please select
+                                                a location.</option>
+                                            <!-- <option value="test">TEST</option> -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="requestSubmit">
+                    <div class="col-sm-6">
+                        <h4>Submit Request</h4>
+                    </div>
+
+                    <div class="col-sm-6 text-right required">
+                        <label class="help_text_rtbt hidden-xs"></label> <label
+                            class="section-help"><small>Please select your
+                                provider, the appropriate appointment category and desired
+                                location </small></label>
+                    </div>
+                </div>
+                <div class="row" id="appointmentBlock">
+                    <div class="col-xs-12">
+                        <div class="well clr-pad-bot clearfix">
+                            <div class="row  row-5-gutter">
+                                <div class="col-sm-5 col-5-gutter">
+                                    <div class="form-group required">
+                                        <label for="reasonforAppointment"> <i
+                                            class="glyphicon glyphicon-asterisk"> </i>Reason for
+                                            appointment
+                                        </label> <input type="text" class="form-control input-sm"
+                                            name="reasonforAppointment" id="reasonforAppointment"
+                                            value="test1" placeholder="Enter Reason..." required>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="prioritySel"><i
+                                            class="glyphicon glyphicon-asterisk"></i>Priority</label> <select
+                                            id="prioritySel" name="prioritySel"
+                                            class="form-control input-sm" required>
+                                            <option value="1">Low</option>
+                                            <option value="2" selected="selected">Normal</option>
+                                            <option value="3">High</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="apponitFor"> <i
+                                            class="glyphicon glyphicon-asterisk"></i>Make appointment
+                                            for
+                                        </label> <select id="apponitFor" name="apponitFor"
+                                            class="form-control input-sm" required>
+                                            <option value="1" selected="selected">This Week</option>
+                                            <option value="2">Next Week</option>
+                                            <option value="3">This Month</option>
+                                            <option value="4">Next Month</option>
+                                            <option value="5">Within 3 Months</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-5-gutter">
+                                    <div class="col-sm-6 col-5-gutter">
+                                        <div class="form-group required">
+                                            <label for="startDate"><i
+                                                class="glyphicon glyphicon-asterisk"></i>Start Date</label>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" id="startDate" name="startDate"
+                                                    class="form-control input-sm datePickTxt hasDatepicker"
+                                                    required readonly> <span class="input-group-btn"><button
+                                                        tabindex="-1" id="startDateIcon" type="button"
+                                                        class="btn btn-default dateIcon">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </button></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-5-gutter">
+                                        <div class="form-group required">
+                                            <label for="endDate"><i
+                                                class="glyphicon glyphicon-asterisk"></i>End Date</label>
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" id="endDate" name="endDate"
+                                                    class="form-control input-sm datePickTxt hasDatepicker"
+                                                    required readonly> <span class="input-group-btn"><button
+                                                        tabindex="-1" id="endDateIcon" type="button"
+                                                        class="btn btn-default dateIcon">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </button></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-5-gutter">
+                                        <div class="form-group required">
+                                            <label for="startTime">Prefered Start Time</label> <select
+                                                class="form-control input-sm" name="startTime"
+                                                id="startTime"><option selected="selected"
+                                                    value="">Select One</option>
+                                                <option value="8:00 AM">8:00 AM</option>
+                                                <option value="8:15 AM">8:15 AM</option>
+                                                <option value="8:30 AM">8:30 AM</option>
+                                                <option value="8:45 AM">8:45 AM</option>
+                                                <option value="9:00 AM">9:00 AM</option>
+                                                <option value="9:15 AM">9:15 AM</option>
+                                                <option value="9:30 AM">9:30 AM</option>
+                                                <option value="9:45 AM">9:45 AM</option>
+                                                <option value="10:00 AM">10:00 AM</option>
+                                                <option value="10:15 AM">10:15 AM</option>
+                                                <option value="10:30 AM">10:30 AM</option>
+                                                <option value="10:45 AM">10:45 AM</option>
+                                                <option value="11:00 AM">11:00 AM</option>
+                                                <option value="11:15 AM">11:15 AM</option>
+                                                <option value="1:00 PM">1:00 PM</option>
+                                                <option value="1:15 PM">1:15 PM</option>
+                                                <option value="1:30 PM">1:30 PM</option>
+                                                <option value="1:45 PM">1:45 PM</option>
+                                                <option value="2:00 PM">2:00 PM</option>
+                                                <option value="2:15 PM">2:15 PM</option>
+                                                <option value="2:30 PM">2:30 PM</option>
+                                                <option value="2:45 PM">2:45 PM</option>
+                                                <option value="3:00 PM">3:00 PM</option>
+                                                <option value="3:15 PM">3:15 PM</option>
+                                                <option value="3:30 PM">3:30 PM</option>
+                                                <option value="3:45 PM">3:45 PM</option>
+                                                <option value="4:00 PM">4:00 PM</option>
+                                                <option value="4:15 PM">4:15 PM</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-5-gutter">
+                                        <div class="form-group required">
+                                            <label for="endTime">Prefered End Time</label> <select
+                                                class="form-control input-sm" name="endTime" id="endTime"><option
+                                                    selected="selected" value="">Select One</option>
+                                                <option value="8:00 AM">8:00 AM</option>
+                                                <option value="8:15 AM">8:15 AM</option>
+                                                <option value="8:30 AM">8:30 AM</option>
+                                                <option value="8:45 AM">8:45 AM</option>
+                                                <option value="9:00 AM">9:00 AM</option>
+                                                <option value="9:15 AM">9:15 AM</option>
+                                                <option value="9:30 AM">9:30 AM</option>
+                                                <option value="9:45 AM">9:45 AM</option>
+                                                <option value="10:00 AM">10:00 AM</option>
+                                                <option value="10:15 AM">10:15 AM</option>
+                                                <option value="10:30 AM">10:30 AM</option>
+                                                <option value="10:45 AM">10:45 AM</option>
+                                                <option value="11:00 AM">11:00 AM</option>
+                                                <option value="11:15 AM">11:15 AM</option>
+                                                <option value="1:00 PM">1:00 PM</option>
+                                                <option value="1:15 PM">1:15 PM</option>
+                                                <option value="1:30 PM">1:30 PM</option>
+                                                <option value="1:45 PM">1:45 PM</option>
+                                                <option value="2:00 PM">2:00 PM</option>
+                                                <option value="2:15 PM">2:15 PM</option>
+                                                <option value="2:30 PM">2:30 PM</option>
+                                                <option value="2:45 PM">2:45 PM</option>
+                                                <option value="3:00 PM">3:00 PM</option>
+                                                <option value="3:15 PM">3:15 PM</option>
+                                                <option value="3:30 PM">3:30 PM</option>
+                                                <option value="3:45 PM">3:45 PM</option>
+                                                <option value="4:00 PM">4:00 PM</option>
+                                                <option value="4:15 PM">4:15 PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-5-gutter">
+                                        <div class="form-group required">
+                                            <div class="form-group">
+
+                                                <table class="day-of-week table-non-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>M</td>
+                                                            <td>T</td>
+                                                            <td>W</td>
+                                                            <td>T</td>
+                                                            <td>F</td>
+                                                            <td>S</td>
+                                                            <td>S</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><input type="checkbox" class="dayofweekck">
+                                                            </td>
+                                                            <td><input type="checkbox" class="dayofweekck">
+                                                            </td>
+                                                            <td><input type="checkbox" class="dayofweekck">
+                                                            </td>
+                                                            <td><input type="checkbox" class="dayofweekck">
+                                                            </td>
+                                                            <td><input type="checkbox" class="dayofweekck">
+                                                            </td>
+                                                            <td><input type="checkbox" class="dayofweekck">
+                                                            </td>
+                                                            <td><input type="checkbox" class="dayofweekck">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-xs-6 col-5-gutter">
+                                        <div class="form-group required">
+                                            <div class="form-group">
+
+                                                <div class="form-group required">
+                                                    <label for="appointmentFor"><i class="glyphicon "></i>Appointment
+                                                        For</label> <select id="appointmentFor" name="appointmentFor"
+                                                        class="form-control input-sm">
+                                                        <option value="Self" selected="selected">Self</option>
+                                                        <option value="Family">Family</option>
+                                                        <option value="Others">Others</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-10 ">
+                        <button class="btn btn-complete pull-right pushdown19"
+                            type="button" id="butReset">
+                            <i class="glyphicon glyphicon-book"></i>&nbsp;Reset&nbsp;<i
+                                class="glyphicon glyphicon-chevron-right icon-link-pad"></i>
+                        </button>
+                    </div>
+                    <div class="col-xs-2 ">
+                        <button class="btn btn-complete pull-left pushdown19"
+                            type="submit">
+                            <i class="glyphicon glyphicon-book"></i>&nbsp;Continue&nbsp;<i
+                                class="glyphicon glyphicon-chevron-right icon-link-pad"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTAINER INNER -->
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!--END MAIN CONTAINER-->
+    
+  </div>
+  
